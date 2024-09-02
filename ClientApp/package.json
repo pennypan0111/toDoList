@@ -1,0 +1,46 @@
+{
+  "name": "clientapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "cypress:e2e:dev:run": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress run --e2e'",
+    "cypress:e2e:dev:open": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --e2e'",
+    "cypress:component:dev:run": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress run --component'",
+    "cypress:component:dev:open": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --component'",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "predev": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-regular-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/vue-fontawesome": "^3.0.5",
+    "bootstrap": "^4.6.2",
+    "devextreme": "^23.2.3",
+    "devextreme-vue": "^23.2.3",
+    "element-plus": "^2.4.4",
+    "pinia": "^2.1.7",
+    "vue": "^3.3.11",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "cypress": "^13.6.1",
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-cypress": "^2.15.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.4.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.19.2",
+    "json-server": "^1.0.0-alpha.21",
+    "start-server-and-test": "^2.0.3",
+    "vite": "^5.0.10",
+    "vite-plugin-eslint": "^1.8.1"
+  }
+}
