@@ -17,7 +17,7 @@ const done = computed(() => listData.value.filter(item => item.isDone))
 
 async function initData() {
   try {
-    const response = await axios.get('/list')
+    const response = await axios.get('/api/Todoes')
     const responseData = response.data
 
     if (Array.isArray(responseData) && responseData.length > 0) {
@@ -29,11 +29,6 @@ async function initData() {
   } catch (error) {
     console.error('API 請求失敗:', error)
   }
-}
-
-async function removeItem (item) {
-  await axios.delete(`/list/${item.id}`)
-  initData()
 }
 
 async function createItem () {
@@ -53,14 +48,43 @@ async function createItem () {
     return
   }
 
-  await axios.post('/list', newListData)
+  await axios.post('/api/Todoes', newListData)
   newItemTitle.value = ''
   initData()
+}
+
+async function removeItem (item) {
+  try {
+    await ElMessageBox.confirm(
+      '是否確定刪除代辦事項?',
+      '刪除事項',
+      {
+        confirmButtonText: '確定',
+        cancelButtonText: '取消'
+      }
+    )
+
+    await axios.delete(`/api/Todoes/${item.id}`)
+
+    ElMessage({
+      type: 'success',
+      message: '刪除成功'
+    })
+
+    initData()
+  } catch {
+    ElMessage({
+      type: 'info',
+      message: '已取消'
+    })
+  }
 }
 
 async function editItem (item) {
   try {
     const { value } = await ElMessageBox.prompt('請輸入修改後的標題', '編輯項目', {
+      confirmButtonText: '確定',
+      cancelButtonText: '取消',
       inputValue: item.title
     })
 
@@ -74,7 +98,7 @@ async function editItem (item) {
 
     item.title = value
 
-    await axios.put(`/list/${item.id}`, item)
+    await axios.put(`/api/Todoes/${item.id}`, item)
 
     ElMessage({
       type: 'success',
@@ -89,7 +113,7 @@ async function editItem (item) {
 }
 
 async function updateItemStatus (item) {
-  await axios.put(`/ist/${item.id}`, item)
+  await axios.put(`/api/Todoes/${item.id}`, item)
 }
 </script>
 
