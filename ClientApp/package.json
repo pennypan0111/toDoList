@@ -20,6 +20,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.5",
+    "axios": "^1.7.7",
     "bootstrap": "^4.6.2",
     "devextreme": "^23.2.3",
     "devextreme-vue": "^23.2.3",
