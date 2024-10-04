@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import customButton from '../components/customButton.vue'
+import customButton from '../components/CustomButton.vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import axios from 'axios'
 
@@ -127,7 +127,7 @@ async function updateItemStatus (item) {
       <div class="bg-one list-title text-center mb-2 p-2">代辦事項</div>
 
       <div class="border p-2 mb-2 d-flex align-items-center">
-        <input class="border-0 w-100 addItem" placeholder="請輸入欲新增事項" v-model="newItemTitle">
+        <input class="border-0 w-100 addItem" placeholder="請輸入欲新增事項" v-model="newItemTitle" data-cy="addItemInput">
         <customButton buttonText="新增" type="success" @click="createItem"></customButton>
       </div>
 

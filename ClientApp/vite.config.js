@@ -20,11 +20,6 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      // '/list': {
-      //   target: 'http://localhost:3000',
-      //   changeOrigin: true,
-      //   secure: false
-      // }
       '/api': {
         target: 'https://todolistpenny.azurewebsites.net',
         changeOrigin: true,
