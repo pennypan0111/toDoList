@@ -40,6 +40,8 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-vue": "^9.19.2",
     "json-server": "^1.0.0-alpha.21",
+    "sass": "^1.79.4",
+    "sass-loader": "^16.0.2",
     "start-server-and-test": "^2.0.3",
     "vite": "^5.0.10",
     "vite-plugin-eslint": "^1.8.1"

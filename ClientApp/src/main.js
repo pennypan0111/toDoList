@@ -1,6 +1,6 @@
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../node_modules/element-plus/dist/index.css'
-import './assets/main.css'
+import './assets/main.scss'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
