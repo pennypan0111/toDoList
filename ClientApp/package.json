@@ -11,7 +11,8 @@
     "cypress:component:dev:run": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress run --component'",
     "cypress:component:dev:open": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --component'",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "predev": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --ignore-path .gitignore"
+    "predev": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --ignore-path .gitignore",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
@@ -20,10 +21,12 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.5",
+    "axios": "^1.7.7",
     "bootstrap": "^4.6.2",
     "devextreme": "^23.2.3",
     "devextreme-vue": "^23.2.3",
     "element-plus": "^2.4.4",
+    "gh-pages": "^6.2.0",
     "pinia": "^2.1.7",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
@@ -39,6 +42,8 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-vue": "^9.19.2",
     "json-server": "^1.0.0-alpha.21",
+    "sass": "^1.79.4",
+    "sass-loader": "^16.0.2",
     "start-server-and-test": "^2.0.3",
     "vite": "^5.0.10",
     "vite-plugin-eslint": "^1.8.1"

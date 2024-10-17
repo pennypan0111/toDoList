@@ -6,6 +6,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/toDoList/',
   plugins: [
     vue(),
     eslintPlugin({
@@ -16,6 +17,15 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://todolistpenny.azurewebsites.net',
+        changeOrigin: true,
+        secure: false
+      }
     }
   }
 })

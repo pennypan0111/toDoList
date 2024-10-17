@@ -1,0 +1,75 @@
+:root{
+  --primaryOne: #975aad;
+  --primaryTwo: #eab32a;
+  --secondOne: gray;
+  --white: #ffffff;
+  --black: #434343;
+}
+
+a{
+  color: #434343;
+}
+a:hover{
+  text-decoration: none;
+}
+.text-b{
+  color: var(--black);
+}
+.text-g{
+  color: var(--secondOne)
+}
+.text-w{
+  color: var(--white);
+}
+.bg-one{
+  background: var(--primaryOne);
+}
+.bg-two{
+  background: var(--primaryTwo);
+}
+
+/* ------------- 移除 bootstrap 預設樣式 ------------- */
+.card{
+  border-radius: 0;
+  border: 0;
+}
+
+/* ------------- 事項標題 ------------- */
+.list-title{
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* ------------- li去除預設點點 ------------- */
+ul li{
+  list-style: none;
+  position: relative;
+  color: var(--black);
+}
+
+/* ------------- 代辦事項：新增項目 ------------- */
+.addItem{
+  height: 24px;
+
+  &:focus-visible{
+    outline: 0;
+  }
+}
+
+
+/* ------------- 完成事項刪除線 ------------- */
+.delete-line{
+  position: relative;
+
+  &:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 1px;
+    background: var(--primaryTwo);
+  }
+}
