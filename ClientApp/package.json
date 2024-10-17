@@ -11,7 +11,8 @@
     "cypress:component:dev:run": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress run --component'",
     "cypress:component:dev:open": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --component'",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "predev": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --ignore-path .gitignore"
+    "predev": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --ignore-path .gitignore",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
@@ -25,6 +26,7 @@
     "devextreme": "^23.2.3",
     "devextreme-vue": "^23.2.3",
     "element-plus": "^2.4.4",
+    "gh-pages": "^6.2.0",
     "pinia": "^2.1.7",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
