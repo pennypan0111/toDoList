@@ -8,6 +8,11 @@ const listData = ref([])
 const dataId = ref(0)
 const newItemTitle = ref('')
 
+const apiClient = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL,
+  timeout: 10000
+})
+
 onMounted(() => {
   initData()
 })
@@ -17,7 +22,7 @@ const done = computed(() => listData.value.filter(item => item.isDone))
 
 async function initData() {
   try {
-    const response = await axios.get('/api/Todoes')
+    const response = await apiClient.get('/Todoes')
     const responseData = response.data
 
     if (Array.isArray(responseData) && responseData.length > 0) {
@@ -48,7 +53,7 @@ async function createItem () {
     return
   }
 
-  await axios.post('/api/Todoes', newListData)
+  await apiClient.post('/Todoes', newListData)
   newItemTitle.value = ''
   initData()
 }
@@ -64,7 +69,7 @@ async function removeItem (item) {
       }
     )
 
-    await axios.delete(`/api/Todoes/${item.id}`)
+    await apiClient.delete(`/Todoes/${item.id}`)
 
     ElMessage({
       type: 'success',
@@ -98,7 +103,7 @@ async function editItem (item) {
 
     item.title = value
 
-    await axios.put(`/api/Todoes/${item.id}`, item)
+    await apiClient.put(`/Todoes/${item.id}`, item)
 
     ElMessage({
       type: 'success',
@@ -113,7 +118,7 @@ async function editItem (item) {
 }
 
 async function updateItemStatus (item) {
-  await axios.put(`/api/Todoes/${item.id}`, item)
+  await apiClient.put(`/Todoes/${item.id}`, item)
 }
 </script>
 
