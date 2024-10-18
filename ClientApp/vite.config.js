@@ -16,6 +16,7 @@ export default defineConfig({
     }),
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: 'auto',
       manifest: {
         name: 'todoList',
         short_name: 'todoList',
@@ -27,7 +28,7 @@ export default defineConfig({
         start_url: '/',
         icons: [
           {
-            src: '/appIcon.jpg',
+            src: 'appIcon.jpg',
             sizes: '512x512',
             type: 'image/png'
           }
