@@ -1,1 +1,1 @@
-{"name":"todoList","short_name":"todoList","start_url":"/","display":"fullscreen","background_color":"#ffffff","lang":"en","scope":"/","theme_color":"#ffffff","orientation":"portrait","icons":[{"src":"/appIcon.jpg","sizes":"512x512","type":"image/png"}]}
+{"name":"todoList","short_name":"todoList","start_url":"/","display":"fullscreen","background_color":"#ffffff","lang":"en","scope":"/","theme_color":"#ffffff","orientation":"portrait","icons":[{"src":"appIcon.jpg","sizes":"512x512","type":"image/png"}]}
