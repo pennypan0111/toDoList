@@ -25,7 +25,7 @@ export default defineConfig({
         display: 'fullscreen',
         orientation: 'portrait',
         scope: '/',
-        start_url: '/',
+        start_url: '/toDoList/',
         icons: [
           {
             src: 'appIcon.jpg',
