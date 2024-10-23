@@ -25,11 +25,15 @@ async function initData() {
     const response = await apiClient.get('/Todoes')
     const responseData = response.data
 
-    if (Array.isArray(responseData) && responseData.length > 0) {
-      dataId.value = parseInt(responseData[responseData.length - 1].id)
-      listData.value = responseData
+    if (Array.isArray(responseData)) {
+      if (responseData.length > 0) {
+        dataId.value = parseInt(responseData[responseData.length - 1].id)
+        listData.value = responseData
+      } else {
+        listData.value = []
+      }
     } else {
-      console.error('資料格式不正確或是空的:', responseData)
+      console.error('資料格式不正確:', responseData)
     }
   } catch (error) {
     console.error('API 請求失敗:', error)
