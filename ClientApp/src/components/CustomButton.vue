@@ -1,13 +1,33 @@
 <script setup>
-const props = defineProps({
-  buttonText: {
+defineProps({
+  iconClass: {
     type: String,
-    required: true,
-    default: '按鈕名稱'
+    required: false
+  },
+  iconColor: {
+    type: String,
+    required: false
   }
 })
 </script>
 
 <template>
-  <el-button>{{ props.buttonText }}</el-button>
+  <div class="iconBtn" :class="iconColor">
+    <font-awesome-icon :icon="iconClass"/>
+  </div>
 </template>
+
+<style lang="scss">
+.iconBtn {
+  width: 30px;
+  height: 30px;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  color: #ffffff;
+  border-radius: 50px;
+  cursor: pointer;
+}
+</style>

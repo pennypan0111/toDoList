@@ -1,31 +1,30 @@
-:root{
-  --primaryOne: #975aad;
-  --primaryTwo: #eab32a;
-  --secondOne: gray;
-  --white: #ffffff;
-  --black: #434343;
-}
+$primaryOne: #975aad;
+$primaryTwo: #eab32a;
+$secondOne: gray;
+$secondTwo: #f46155;
+$white: #ffffff;
+$black: #434343;
 
 a{
-  color: #434343;
+  color: $black;
 }
 a:hover{
   text-decoration: none;
 }
 .text-b{
-  color: var(--black);
+  color: $black;
 }
 .text-g{
-  color: var(--secondOne)
+  color: $secondOne;
 }
 .text-w{
-  color: var(--white);
+  color: $white;
 }
 .bg-one{
-  background: var(--primaryOne);
+  background: $primaryOne;
 }
 .bg-two{
-  background: var(--primaryTwo);
+  background: $primaryTwo;
 }
 
 /* ------------- 移除 bootstrap 預設樣式 ------------- */
@@ -36,7 +35,7 @@ a:hover{
 
 /* ------------- 事項標題 ------------- */
 .list-title{
-  color: var(--white);
+  color: $white;
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -45,7 +44,7 @@ a:hover{
 ul li{
   list-style: none;
   position: relative;
-  color: var(--black);
+  color: $black;
 }
 
 /* ------------- 代辦事項：新增項目 ------------- */
@@ -57,19 +56,18 @@ ul li{
   }
 }
 
-
 /* ------------- 完成事項刪除線 ------------- */
 .delete-line{
   position: relative;
 
   &:after{
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 85%;
     height: 1px;
-    background: var(--primaryTwo);
+    background: $primaryTwo;
   }
 }
