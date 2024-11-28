@@ -71,3 +71,13 @@ ul li{
     background: $primaryTwo;
   }
 }
+
+/* ------------- element-plus loading component ------------- */
+.el-loading-spinner {
+  .path {
+    stroke: $primaryTwo;
+  }
+  .el-loading-text {
+    color: $primaryTwo;
+  }
+}
