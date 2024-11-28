@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import customButton from '../components/CustomButton.vue'
-import { ElMessage, ElMessageBox } from 'element-plus'
+import { ElMessage, ElMessageBox, ElLoading } from 'element-plus'
 import axios from 'axios'
 
 const listData = ref([])
@@ -21,6 +21,12 @@ const toDo = computed(() => listData.value.filter(item => !item.isDone))
 const done = computed(() => listData.value.filter(item => item.isDone))
 
 async function initData() {
+  const loadingData = ElLoading.service({
+    lock: true,
+    text: 'Loading',
+    background: 'rgba(0, 0, 0, 0.7)'
+  })
+
   try {
     const response = await apiClient.get('/Todoes')
     const responseData = response.data
@@ -37,6 +43,8 @@ async function initData() {
     }
   } catch (error) {
     console.error('API 請求失敗:', error)
+  } finally {
+    loadingData.close()
   }
 }
 
@@ -58,8 +66,9 @@ async function createItem () {
   }
 
   await apiClient.post('/Todoes', newListData)
+  await initData()
+
   newItemTitle.value = ''
-  initData()
 }
 
 async function removeToDoItem (item) {
@@ -75,16 +84,23 @@ async function removeToDoItem (item) {
 
     await apiClient.delete(`/Todoes/${item.id}`)
 
+    await initData()
+
     ElMessage({
       type: 'success',
       message: '刪除成功'
     })
+  } catch (error) {
+    if (error !== 'cancel') {
+      ElMessage({
+        type: 'error',
+        message: '刪除操作失敗'
+      })
+    }
 
-    initData()
-  } catch {
     ElMessage({
       type: 'info',
-      message: '已取消'
+      message: '已取消刪除'
     })
   }
 }
@@ -102,16 +118,23 @@ async function removeDoneItem (item) {
 
     await apiClient.delete(`/Todoes/${item.id}`)
 
+    await initData()
+
     ElMessage({
       type: 'success',
       message: '刪除成功'
     })
+  } catch (error) {
+    if (error !== 'cancel') {
+      ElMessage({
+        type: 'error',
+        message: '刪除操作失敗'
+      })
+    }
 
-    initData()
-  } catch {
     ElMessage({
       type: 'info',
-      message: '已取消'
+      message: '已取消刪除'
     })
   }
 }
@@ -141,6 +164,13 @@ async function editItem (item) {
       message: '編輯成功'
     })
   } catch (status) {
+    if (status !== 'cancel') {
+      ElMessage({
+        type: 'error',
+        message: '編輯操作失敗'
+      })
+    }
+
     ElMessage({
       type: 'info',
       message: '取消編輯'
