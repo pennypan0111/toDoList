@@ -1,9 +1,4 @@
-$primaryOne: #975aad;
-$primaryTwo: #eab32a;
-$secondOne: gray;
-$secondTwo: #f46155;
-$white: #ffffff;
-$black: #434343;
+@import "@/assets/custom-element-plus.scss";
 
 a{
   color: $black;
@@ -15,16 +10,16 @@ a:hover{
   color: $black;
 }
 .text-g{
-  color: $secondOne;
+  color: $gray-600;
 }
 .text-w{
   color: $white;
 }
 .bg-one{
-  background: $primaryOne;
+  background: $primary;
 }
 .bg-two{
-  background: $primaryTwo;
+  background: $secondary;
 }
 
 /* ------------- 移除 bootstrap 預設樣式 ------------- */
@@ -68,16 +63,6 @@ ul li{
     transform: translateY(-50%);
     width: 85%;
     height: 1px;
-    background: $primaryTwo;
-  }
-}
-
-/* ------------- element-plus loading component ------------- */
-.el-loading-spinner {
-  .path {
-    stroke: $primaryTwo;
-  }
-  .el-loading-text {
-    color: $primaryTwo;
+    background: $secondary;
   }
 }
