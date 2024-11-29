@@ -27,3 +27,7 @@ $error:       $red !default;
 $highlight:   $yellow !default;
 $disabled :   $gray-100 !default;
 $border:      $gray-200 !default;
+
+// input
+$input-disabled-color: $disabled;
+$input-border-color:   $border;
