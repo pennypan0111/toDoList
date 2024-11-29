@@ -46,26 +46,3 @@ const inputValue = computed({
     <el-input v-model="inputValue" :placeholder="placeholder" :type="type" :disabled="disabled"/>
   </div>
 </template>
-
-<style lang="scss">
-.el-input {
-  width: 100%;
-  margin-bottom: 16px;
-
-  &.is-disabled {
-    .el-input__wrapper {
-      background-color: $input-disabled-color;
-      border: 1px solid $input-border-color;
-    }
-  }
-
-  .el-input__wrapper {
-    border: 1px solid $input-border-color;
-    border-radius: 50px;
-
-    &.is-focus {
-      box-shadow: 0 0 0 1px $input-border-color inset;
-    }
-  }
-}
-</style>
