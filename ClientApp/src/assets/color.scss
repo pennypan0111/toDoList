@@ -1,0 +1,33 @@
+// color code
+$white:    #fff !default;
+$black:    #000 !default;
+
+$gray-100: #d4d4d4 !default;
+$gray-200: #bbbbbc !default;
+$gray-300: #a1a1a4 !default;
+$gray-400: #88888c !default;
+$gray-500: #6f6f73 !default;
+$gray-600: #56565b !default;
+$gray-700: #3c3c43 !default;
+$gray-800: #23232b !default;
+
+$blue:      #0277ff !default;
+$red:       #f36a69 !default;
+$yellow:    #f8e71c !default;
+$orange:    #f5a623 !default;
+$green:     #13ce66 !default;
+
+// semantic color
+$primary:     #975aad !default;
+$secondary:   #eab32a !default;
+$success:     $green !default;
+$warning:     $orange !default;
+$danger:      $red !default;
+$error:       $red !default;
+$highlight:   $yellow !default;
+$disabled :   $gray-100 !default;
+$border:      $gray-200 !default;
+
+// input
+$input-disabled-color: $disabled;
+$input-border-color:   $border;
