@@ -2,15 +2,18 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
+import { useAuthStore } from '../stores/auth.js'
 import BoInput from '../components/BoInput.vue'
 
 const router = useRouter()
 const Account = ref('')
 const Password = ref('')
+const authStore = useAuthStore()
 
-// TODO: 待串接登入驗證 API，並按需求修改以下判斷條件及欲處理之動作 (以下僅為簡易範例)
+// TODO: 待串接登入驗證 API，並按需求修改以下判斷條件及欲處理之動作
 function handleLogin() {
   if (Account.value === 'admin' && Password.value === '123') {
+    authStore.login()
     router.replace({ path: '/home' })
   } else {
     ElMessage.error('帳密輸入錯誤')
